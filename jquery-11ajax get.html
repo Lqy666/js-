@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+//get：通过Http的get请求载入信息；
+//参数：url，[data],[callback],[type];
+//    data:url地址方式index.php?username=jingshan&pwd=123456
+//{key:value,key2:value}
+//    常用形式：$.get('test.php',(name:'john',time:'2pm'));
+//    type:xml,html,script,json,text,default;
+    $(function(){
+        $('#get_msg_do').click(function(){
+            var iphone=$('#iphone_g').val();
+            var url='http://maizi.itpaimai.com/jquery/get/';
+            var data={}
+        })
+    })
+</script>
+</body>
+</html>

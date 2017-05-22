@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<span id="cl">我需要阳光</span>
+<div id="display"></div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+//    load的作用，载入远程html文件代码并插入值DOM中。
+//    参数：url，[data,[callback]],url是html网址；data是发送到服务器的数据key/value;callback回调函数；
+//    通用格式$('#links').load('http://www.baidu.com')；
+    $(function(){
+        $('#cl').click(function(){
+            $('#display').load('https://www.baidu.com/s?ie=UTF-8&wd=%E7%99%BE%E5%BA%A6')
+        })
+
+    })
+</script>
+</body>
+</html>

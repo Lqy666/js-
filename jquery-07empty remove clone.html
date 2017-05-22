@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" value="clone" id="clone"/>
+<input type="button" value="empty" id="empty"/>
+<input type="button" value="remove" id="remove"/>
+<div id="a">
+    <p id="a1">where are you?</p>
+</div>
+<div id="b">
+    <p id="b1">I'm here!</p>
+</div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+    $(function(){
+        $('#clone').click(function(){
+            $('#a1').clone().appendTo('#b');
+        });
+        $('#empty').click(function(){
+            $('#a').empty();
+        });
+        $('#remove').click(function(){
+            $('#a1').remove();
+        })
+    })
+    //.style .attr 和.css的区别
+//    .style对象是写在style中样式，它有很多属性，一般情况都是在javascript操作前已经存在，对其进行修改！
+//            .attr 对象是写在标签里面的属性！
+//            .css一般都是外加的，重新添加的css样式！
+
+</script>
+</body>
+</html>

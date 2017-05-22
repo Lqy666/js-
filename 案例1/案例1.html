@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <input type="text" id="count"/>
+    <input type="button" value="游戏开始" id="start"/>
+    <input type="button" value="提交" id="sub"/>
+    <p id="result"></p>
+</div>
+<script src="../js/jquery-3.1.1.min.js"></script>
+<script>
+
+    $(function(){
+        var a, b, c,d;
+        var arr;
+        $('#start').click(function(){
+            function f0() {
+                var x = parseInt(Math.random() * 10000);
+                a = parseInt(x % 10);//个位数；
+                b = parseInt((x - a) % 100 / 10);//十位数；
+                c = parseInt((x - a - b * 10) % 1000 / 100);//百位数;
+                d = parseInt(x / 1000);//千位数。
+                console.log(x);
+                if(f1(a,b,c,d)==false){
+                    f0();
+                }else{
+
+                }
+
+            };
+            f0();
+
+            function f1(a,b,c,d){
+                 arr=[a,b,c,d];
+                for(var i=0;i<arr.length;i++){
+                    for(var j=0;j<arr.length;j++){
+                        if(arr[j]==arr[i]&&j!=i){
+                            return false
+                        }
+                    }
+                }
+                return true;
+            }
+
+            f1(a,b,c,d);
+        });
+            $('#sub').click(function(){
+                var y=$('#count').val();
+                a1 = parseInt(y % 10);//个位数；
+                b1 = parseInt((y - a) % 100 / 10);//十位数；
+                c1= parseInt((y - a - b * 10) % 1000 / 100);//百位数;
+                d1= parseInt(y / 1000);//千位数。
+                var arr1=[a1,b1,c1,d1];
+                var n=0;
+                var m=0;
+                for(var i=0;i<arr1.length;i++){
+                    for(var j=0;j<arr.length;j++){
+                        if(arr[j]==arr1[i]&&j==i){
+                            n++;
+                        }else if(arr[j]==arr1[i]&&j!=i){
+                            m++;
+                        }
+                    }
+                };
+                $('#result').text(n+'A'+m+'B')
+            })
+
+    })
+
+</script>
+</body>
+</html>

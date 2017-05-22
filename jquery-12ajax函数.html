@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" name="lqy" id="a">
+<span id="msg">获取的信息在这里显示</span><br>
+<span id="b">点击获取</span>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+//    ajax:作用，通过HTTP请求加载远程数据！
+//    参数：(url:baidu.com,context:123)
+//    常用格式：
+//    $.ajax({
+//        type:'POST',//请求发送的方式、get
+//        url:'some.php',//请求发送的路径
+//        data:'name=John$location=Boston',//发送给后台的数据
+//        success:function(msg){//data的请求成功后，后台传递的内容！
+//            alert('Data Saved:'+msg)
+//        }
+//    })
+    $('#b').click(function(){
+        var name=$('#a').val();
+        var url='http://maizi.itpaimai.com/jquery/ajax';
+        var data={name:name};
+        $.ajax({
+            url:url,
+            data:data,
+//            type:'POST',
+            dataType:'jsonp',
+            success:function(msgs){
+                $('#msg').text(msgs);
+            },
+            error:function(){
+                $("#msg").text('link fail')
+            },
+            time:300
+
+
+        })
+    })
+
+</script>
+</body>
+</html>

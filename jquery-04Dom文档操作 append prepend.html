@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #container{
+            border:1px solid green;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+   <p>江苏省灌云高级中学</p>
+</div>
+    <p id="university">华北理工大学</p>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+    var a=$('#university')
+    $("#container").append(a);
+    $('#container').prepend('<a href="#">可惜我都毕业了</a>')
+    $('<p>我是来自北方的狼</p>').appendTo('#container');
+</script>
+</body>
+</html>

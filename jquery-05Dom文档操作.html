@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            border:1px solid green;
+        }
+    </style>
+</head>
+<body>
+<!--after before insertAfter insert-->
+<div>
+    <p id="a">一</p>
+    <p id="b">二</p>
+    <p id="c">三</p>
+    <p id="d">四</p>
+</div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+    $('#a').after('<a href="">我能出现吗</a>');//#a与a标签同级；
+    $('#a').before('<a>我是试试能不能出现</a>');//after/before都是在原来有的元素的前后添加新的原来没有的元素！
+    $('#c').insertBefore('#a')//
+    $('#b').insertAfter('#d')//
+    $('<a>kenengba</a>').insertBefore('#a')
+</script>
+</body>
+</html>
